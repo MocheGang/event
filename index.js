@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import connectDB from './config/db.js';
 import userRoutes from './routes/userRoutes.js';
 import eventRoutes from './routes/eventRoutes.js';
@@ -8,6 +9,16 @@ import notificationRoutes from './routes/notificationRoutes.js';
 
 dotenv.config();
 connectDB();
+
+// Configuration de CORS
+const corsOptions = {
+    origin: 'https://localhost:5000', // Remplacez par votre domaine
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true, // Autorise les cookies et les identifiants
+  }
+
+  app.use(cors(corsOptions));
 
 const app = express();
 app.use(express.json());
