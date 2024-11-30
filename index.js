@@ -10,6 +10,9 @@ import notificationRoutes from './routes/notificationRoutes.js';
 dotenv.config();
 connectDB();
 
+const app = express();
+app.use(express.json());
+
 // Configuration de CORS
 const corsOptions = {
     origin: 'https://localhost:5000', // Remplacez par votre domaine
@@ -20,8 +23,7 @@ const corsOptions = {
 
   app.use(cors(corsOptions));
 
-const app = express();
-app.use(express.json());
+
 
 // Routes
 app.use('/api/users', userRoutes);
