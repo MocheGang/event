@@ -15,7 +15,7 @@ app.use(express.json());
 
 // Configuration de CORS
 const corsOptions = {
-    origin: 'http://localhost:5000', // Remplacez par votre domaine
+    origin: 'http://localhost:3000', // Remplacez par votre domaine
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true, // Autorise les cookies et les identifiants

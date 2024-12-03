@@ -24,4 +24,4 @@ const notificationSchema = new mongoose.Schema({
   } // Date d'envoi
 }, { timestamps: true });
 
-export default mongoose.model('Notification', notificationSchema);
+export default mongoose.model('Notification', notificationSchema);0
